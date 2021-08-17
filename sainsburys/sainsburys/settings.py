@@ -7,6 +7,8 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+from shutil import which
+
 BOT_NAME = 'sainsburys'
 
 SPIDER_MODULES = ['sainsburys.spiders']
@@ -54,6 +56,10 @@ CONCURRENT_REQUESTS = 1
 #    'sainsburys.middlewares.SainsburysDownloaderMiddleware': 543,
 #}
 
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_selenium.SeleniumMiddleware': 800
+}
+
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
@@ -86,3 +92,9 @@ CONCURRENT_REQUESTS = 1
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# Scrapy-Selenium Gecko Driver
+
+SELENIUM_DRIVER_NAME = 'firefox'
+SELENIUM_DRIVER_EXECUTABLE_PATH = '../driver/geckodriver'
+SELENIUM_DRIVER_ARGUMENTS = [] # '--headless' if using chrome instead of firefox
