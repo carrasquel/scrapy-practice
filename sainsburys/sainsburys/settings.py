@@ -7,8 +7,6 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-from shutil import which
-
 BOT_NAME = 'sainsburys'
 
 SPIDER_MODULES = ['sainsburys.spiders']
